@@ -1,0 +1,11 @@
+el_zorro_banker_report:
+    pattern:  /
+    defaults: { _controller: ElZorroBankerBundle:Report:index }
+
+el_zorro_banker_schedule:
+    prefix: /schedule
+    resource: "@ElZorroBankerBundle/Resources/config/routing/schedule.yml"
+
+el_zorro_banker_transfer:
+    prefix: /transfer
+    resource: "@ElZorroBankerBundle/Resources/config/routing/transfer.yml"

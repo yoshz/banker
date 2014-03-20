@@ -1,0 +1,37 @@
+{% extends 'ElZorroBankerBundle::base.html.twig' %}
+
+{% block content %}
+
+<h1>{{ 'Report'|trans }} {{ year }}</h1>
+
+<p>
+{% for y in [2013,2014] %}
+<a href="{{ path('el_zorro_banker_report') }}?year={{ y }}">{{ y }}</a>
+{% endfor %}
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            {% for column in report.columns %}
+            <th{% if not loop.first %} class="text-right"{% endif %}>{{ column }}
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in report.rows %}
+        <tr>
+            {% for column in row %}
+                {% if loop.first %}
+                <td>{{ column }}</td>
+                {% else %}
+                <td class="text-right">{{ column|number_format(2) }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+

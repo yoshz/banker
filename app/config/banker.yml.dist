@@ -1,0 +1,5 @@
+el_zorro_banker:
+    categories:
+        - Default
+    filters:
+        - {filter: "Default", category: "Default"}

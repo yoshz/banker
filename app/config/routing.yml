@@ -1,0 +1,4 @@
+el_zorro_banker:
+    resource: "@ElZorroBankerBundle/Resources/config/routing.yml"
+    prefix:   /
+

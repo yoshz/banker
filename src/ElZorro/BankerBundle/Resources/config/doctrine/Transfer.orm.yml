@@ -1,0 +1,37 @@
+ElZorro\BankerBundle\Entity\Transfer:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        category:
+            type: string
+            length: 50
+            nullable: true
+        accountFrom:
+            type: string
+            length: '50'
+            column: account_from
+            nullable: true
+        accountTo:
+            type: string
+            length: '50'
+            column: account_to
+            nullable: true
+        amount:
+            type: decimal
+            precision: 6
+            scale: 2
+        description:
+            type: text
+            nullable: true
+        date:
+            type: date
+    lifecycleCallbacks: {  }

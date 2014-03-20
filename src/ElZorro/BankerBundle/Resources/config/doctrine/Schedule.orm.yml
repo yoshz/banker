@@ -1,0 +1,27 @@
+ElZorro\BankerBundle\Entity\Schedule:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        period:
+            type: string
+            length: '10'
+        amount:
+            type: decimal
+            precision: 6
+            scale: 2
+        startdate:
+            type: date
+            nullable: true
+        enddate:
+            type: date
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,14 @@
+parameters:
+    el_zorro_banker.form.type.schedule.class: ElZorro\BankerBundle\Form\Type\ScheduleType
+    el_zorro_banker.report.category.class: ElZorro\BankerBundle\Report\CategoryReport
+
+services:
+    el_zorro_banker.form.type.schedule:
+        class: %el_zorro_banker.form.type.schedule.class%
+        tags:
+            - { name: form.type, alias: el_zorro_banker_schedule }
+    el_zorro_banker.report.category:
+        class: %el_zorro_banker.report.category.class%
+        arguments:
+            - @doctrine.orm.entity_manager
+            - %el_zorro_banker_categories%

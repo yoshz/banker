@@ -1,0 +1,13 @@
+/public/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/parameters.yml
+/app/config/banker.yml
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+/build/
+/vendor/
+/nbproject/
+/bin/
+/composer.phar

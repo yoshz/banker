@@ -1,0 +1,15 @@
+el_zorro_banker_schedule_index:
+    pattern: /
+    defaults: { _controller: ElZorroBankerBundle:Schedule:index }
+
+el_zorro_banker_schedule_add:
+    pattern: /add
+    defaults: { _controller: ElZorroBankerBundle:Schedule:add }
+
+el_zorro_banker_schedule_edit:
+    pattern: /{id}/edit
+    defaults: { _controller: ElZorroBankerBundle:Schedule:edit }
+
+el_zorro_banker_schedule_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: ElZorroBankerBundle:Schedule:delete }

@@ -1,0 +1,15 @@
+el_zorro_banker_transfer_index:
+    pattern: /
+    defaults: { _controller: ElZorroBankerBundle:Transfer:index }
+
+el_zorro_banker_transfer_add:
+    pattern: /add
+    defaults: { _controller: ElZorroBankerBundle:Transfer:add }
+
+el_zorro_banker_transfer_edit:
+    pattern: /{id}/edit
+    defaults: { _controller: ElZorroBankerBundle:Transfer:edit }
+
+el_zorro_banker_transfer_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: ElZorroBankerBundle:Transfer:delete }
