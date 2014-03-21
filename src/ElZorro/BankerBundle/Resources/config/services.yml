@@ -1,5 +1,6 @@
 parameters:
     el_zorro_banker.form.type.schedule.class: ElZorro\BankerBundle\Form\Type\ScheduleType
+    el_zorro_banker.form.type.transfer.class: ElZorro\BankerBundle\Form\Type\TransferType
     el_zorro_banker.report.category.class: ElZorro\BankerBundle\Report\CategoryReport
 
 services:
@@ -7,6 +8,11 @@ services:
         class: %el_zorro_banker.form.type.schedule.class%
         tags:
             - { name: form.type, alias: el_zorro_banker_schedule }
+    el_zorro_banker.form.type.transfer:
+        class: %el_zorro_banker.form.type.transfer.class%
+        arguments: [%el_zorro_banker_categories%]
+        tags:
+            - { name: form.type, alias: el_zorro_banker_transfer }
     el_zorro_banker.report.category:
         class: %el_zorro_banker.report.category.class%
         arguments:

@@ -21,7 +21,7 @@ class IngImportCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('elzorro:ingimport')
+            ->setName('banker:ingimport')
             ->setDescription('Import ING transactions')
             ->addArgument(
                 'file',

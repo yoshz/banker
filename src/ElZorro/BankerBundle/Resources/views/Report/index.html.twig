@@ -2,15 +2,9 @@
 
 {% block content %}
 
-<h1>{{ 'Report'|trans }} {{ year }}</h1>
+<h1>{{ 'Report'|trans }}</h1>
 
-<p>
-{% for y in [2013,2014] %}
-<a href="{{ path('el_zorro_banker_report') }}?year={{ y }}">{{ y }}</a>
-{% endfor %}
-</p>
-
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             {% for column in report.columns %}
@@ -19,14 +13,16 @@
         </tr>
     </thead>
     <tbody>
-        {% for row in report.rows %}
+        {% for label, row in report.rows %}
         <tr>
-            {% for column in row %}
-                {% if loop.first %}
-                <td>{{ column }}</td>
-                {% else %}
-                <td class="text-right">{{ column|number_format(2) }}</td>
-                {% endif %}
+            <th>{{ label }}</th>
+            {% for category, column in row %}
+            <td class="text-right">
+                <a href="{{ path('el_zorro_banker_transfer_index', {month: label, category: category }) }}" class="text-{{ column.total >= 0 ? 'success' : 'danger'}}">{% spaceless %}
+                {% if loop.last %}<strong>{{ column.total|number_format(2) }}</strong>{% else %}{{ column.total|number_format(2) }}{% endif %}
+                {% endspaceless %}</a><br>
+                <small class="text-muted">+{{ column.add|number_format(2) }} / {{ column.sub|number_format(2) }}</small>
+            </td>
             {% endfor %}
         </tr>
         {% endfor %}

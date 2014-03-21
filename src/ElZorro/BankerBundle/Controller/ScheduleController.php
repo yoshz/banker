@@ -81,7 +81,7 @@ class ScheduleController extends Controller
             return $this->redirect($this->generateUrl('el_zorro_banker_schedule_index'));
         }
 
-        return $this->render('ElZorroBankerBundle:Schedule:add.html.twig', array(
+        return $this->render('ElZorroBankerBundle:Schedule:edit.html.twig', array(
             'form' => $form->createView(),
         ));
     }

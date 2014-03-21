@@ -1,0 +1,14 @@
+{% extends 'ElZorroBankerBundle::base.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{ 'Edit transfer'|trans }}</h1>
+    </div>
+</div>
+
+<div class="row">
+    {{ form(form, {attr: {class: 'form-horizontal col-xs-6'}} ) }}
+</div>
+
+{% endblock %}

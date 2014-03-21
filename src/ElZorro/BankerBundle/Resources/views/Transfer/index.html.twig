@@ -4,22 +4,32 @@
 
 <h1>{{ 'Transactions'|trans }}</h1>
 
-<table class="table table-striped">
+<table class="table table-bordered">
     <thead>
         <tr>
-            <th>{{ 'Name'|trans }}</th>
-            <th>{{ 'Date'|trans }}</th>
-            <th>{{ 'Category'|trans }}</th>
-            <th>{{ 'Amount'|trans }}</th>
+            <th width="30%">{{ knp_pagination_sortable(pagination, 'Name'|trans , 'transfer.name') }}</th>
+            <th width="35%">{{ knp_pagination_sortable(pagination, 'Description'|trans , 'transfer.description') }}</th>
+            <th width="10%">{{ knp_pagination_sortable(pagination, 'Date'|trans , 'transfer.date') }}</th>
+            <th width="10%">{{ knp_pagination_sortable(pagination, 'Category'|trans , 'transfer.category') }}</th>
+            <th width="10%">{{ knp_pagination_sortable(pagination, 'Amount'|trans , 'transfer.amount') }}</th>
+            <th width="5%"></th>
         </tr>
     </thead>
     <tbody>
     {% for transfer in pagination %}
         <tr>
-            <td><span data-toggle="tooltip" title="{{ transfer.description }}">{{ transfer.name }}</span></td>
+            <td>{{ transfer.name }}</td>
+            <td><small style="word-wrap:break-word;word-break:break-all;">{{ transfer.description }}</small></td>
             <td>{{ transfer.date|date('d-m-Y') }}</td>
             <td>{{ transfer.category }}</td>
-            <td class="text-right {% if transfer.amount >= 0 %}success{% else %}danger{% endif %}">{{ transfer.amount }}</td>
+            <td class="text-right">
+                <span class="label label-{% if transfer.amount >= 0 %}success{% else %}danger{% endif %}">{{ transfer.amount }}</span>
+            </td>
+            <td>
+                <a href="{{ path('el_zorro_banker_transfer_edit', {id: transfer.id})}}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+            </td>
         </tr>
     {% endfor %}
     </tbody>

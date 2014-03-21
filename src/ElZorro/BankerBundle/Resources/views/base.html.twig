@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}Banker{% endblock %}</title>
         {% block metatags %}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         {% endblock %}
@@ -19,7 +19,7 @@
     </head>
     <body>
         <nav class="navbar navbar-default" role="navigation">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -27,11 +27,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('el_zorro_banker_report') }}">Banker</a>
                 </div>
 
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
+                        <li><a href="{{ path('el_zorro_banker_report') }}">{{ 'Reports'|trans }}</a></li>
                         <li><a href="{{ path('el_zorro_banker_transfer_index') }}">{{ 'Transactions'|trans }}</a></li>
                         <li><a href="{{ path('el_zorro_banker_schedule_index') }}">{{ 'Schedules'|trans }}</a></li>
                     </ul>
@@ -40,7 +40,7 @@
         </nav>
 
         {% block body %}
-        <div class="container">
+        <div class="container-fluid">
             {% block content %}{% endblock %}
         </div>
         {% endblock %}
