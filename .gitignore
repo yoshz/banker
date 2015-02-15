@@ -4,10 +4,13 @@
 /app/config/parameters.yml
 /app/config/banker.yml
 /app/logs/*
+/app/data/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
-/build/
-/vendor/
+!app/data/.gitkeep
+/build
+/vendor
 /nbproject/
-/bin/
-/composer.phar
+/bin
+/composer.lock
+/.idea

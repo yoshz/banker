@@ -23,7 +23,7 @@
             <td>{{ transfer.date|date('d-m-Y') }}</td>
             <td>{{ transfer.category }}</td>
             <td class="text-right">
-                <span class="label label-{% if transfer.amount >= 0 %}success{% else %}danger{% endif %}">{{ transfer.amount }}</span>
+                <span class="label label-{% if transfer.amount >= 0 %}success{% else %}danger{% endif %}">{{ transfer.amount|number_format(2) }}</span>
             </td>
             <td>
                 <a href="{{ path('el_zorro_banker_transfer_edit', {id: transfer.id})}}">

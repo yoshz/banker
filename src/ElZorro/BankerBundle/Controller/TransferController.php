@@ -37,7 +37,7 @@ class TransferController extends Controller
         $pagination = $paginator->paginate(
             $qb,
             $request->query->get('page', 1)/*page number*/,
-            15/*limit per page*/
+            25/*limit per page*/
         );
 
         return $this->render('ElZorroBankerBundle:Transfer:index.html.twig', array(

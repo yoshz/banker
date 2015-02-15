@@ -25,26 +25,17 @@ Installation
 
 1.  Clone this repository
 
-    git clone git@github.com:yoshz/banker.git banker/
+    git clone git@github.com:yoshz/banker.git
 
-2.  Create app/config/parameters.yml and modify the file to your needs
-
-    cp app/config/parameters.yml.dist app/config/parameters.yml
-
-3.  Create app/config/banker.yml, you can modify it later
+2.  Create app/config/banker.yml, you can modify it later
 
     cp app/config/banker.yml.dist app/config/banker.yml
 
-3.  Install composer
+3.  Run composer install
 
-    cd banker/
-    curl -s http://getcomposer.org/installer | php
+    composer install
 
-4.  Run composer install
-
-    php composer.phar install
-
-5.  Create database scheme
+4.  Create database scheme
 
     php app/console doctrine:schema:create
 
